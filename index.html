@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ سماسيمو ❤️</title>
 
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd6e7,#fff0f6);
+color:#b30059;
+text-align:center;
+overflow-x:hidden;
+}
+
+.login{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+input{
+padding:15px;
+width:250px;
+border:none;
+border-radius:15px;
+font-size:18px;
+text-align:center;
+margin-top:20px;
+}
+
+button{
+margin-top:20px;
+padding:12px 30px;
+border:none;
+border-radius:15px;
+background:#ff4f8b;
+color:#fff;
+font-size:18px;
+cursor:pointer;
+}
+
+#site{
+display:none;
+padding:20px;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+h1{
+margin:20px 0;
+font-size:38px;
+}
+
+.counter{
+font-size:24px;
+font-weight:bold;
+margin:20px;
+}
+
+.envelope{
+width:180px;
+height:120px;
+background:#ff6fa8;
+margin:30px auto;
+border-radius:10px;
+position:relative;
+cursor:pointer;
+}
+
+.envelope:before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+border-left:90px solid transparent;
+border-right:90px solid transparent;
+border-top:60px solid #ff94bf;
+}
+
+.letter{
+display:none;
+background:#fff;
+padding:25px;
+border-radius:20px;
+max-width:700px;
+margin:25px auto;
+line-height:2;
+font-size:20px;
+box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="login">
+<h1>❤️ Welcome ❤️</h1>
+
+<input
+type="password"
+id="pass"
+placeholder="Password">
+
+<button onclick="checkPass()">
+دخول
+</button>
+
+</div>
+
+<div id="site">
+
+<h1>❤️ سماسيمو ❤️</h1>
+
+<div id="counter" class="counter"></div>
+
+<div class="envelope" onclick="openLetter()"></div>
+
+<div class="letter" id="letter">انا بحبك اوي ي سماسيمو بجد بحبك معرفش حبيتك ازاي ف وقت قليل اوي كده بس بجد بحبك ❤️
+
+انا مطمن لوجودك اوي، مش خايف منك ابدا ولا قلقان، وحاسس إن مشاعري المرادي في مكانها الصح.
+
+انا بجد فخور باختيارك، ومبسوط بوجودك جنبي.
+
+متبعديش عني في يوم من الأيام ❤️
+
+<br><br>
+
+واخر حاجه عايز اقولهالك بجد...
+
+متزعليش ولا تدايقي ولا حتى تقلقي طول ما انا موجود.
+
+انا هنا علشانك...
+علشان اعوضك عن كل حاجه وحشه مريتي بيها.
+
+انا معاكي دايمًا يا سماسيمو ❤️
+
+<br><br>
+
+بحبك اوي ❤️
+
+</div>
+
+<h2 style="margin-top:40px;">📸 ذكرياتنا ❤️</h2>
+
+<div class="gallery">
+
+<img src="IMG-20260627-WA0205.jpg">
+
+<img src="IMG-20260627-WA0214.jpg">
+
+<img src="IMG-20260627-WA0233.jpg">
+
+<img src="IMG20260626231616.jpg">
+
+<img src="IMG_20260626_233444_690.jpg">
+
+<img src="IMG_2931.jpg">
+
+</div>
+
+</div>
+
+<script>
+
+function checkPass(){
+
+if(document.getElementById("pass").value==="Smasemo"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("site").style.display="block";
+
+}else{
+
+alert("كلمة المرور غير صحيحة ❤️");
+
+}
+
+}
+
+function openLetter(){
+
+document.getElementById("letter").style.display="block";
+
+}
+
+const start=new Date("2026-06-23T23:14:00");function updateCounter(){
+
+const now=new Date();
+
+let diff=now-start;
+
+let days=Math.floor(diff/(1000*60*60*24));
+
+let hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+
+let minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+
+let seconds=Math.floor((diff%(1000*60))/1000);
+
+if(diff<0){
+
+document.getElementById("counter").innerHTML=
+"❤️ باقي على بداية عداد حبنا ❤️";
+
+return;
+
+}
+
+document.getElementById("counter").innerHTML=
+
+`❤️ ${days} يوم ${hours} ساعة ${minutes} دقيقة ${seconds} ثانية ❤️`;
+
+}
+
+setInterval(updateCounter,1000);
+
+updateCounter();
+
+</script>
+
+</body>
+</html>
